@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Fonts -->
+    <link href="./stylesheets/flaticon/flaticon.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <!-- CSS reset -->
+    <link href="./stylesheets/css-reset.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="./stylesheets/styles.css" rel="stylesheet">
+    <title>The webcomic shelf - latest episodes of  your favourite webcomics</title>
+  </head>
+  <body>
+    <div id="contentContainer">
+        <div id="errorContainer" class="sectionContainer">
+            <span class="tableCell">
+                <strong>Warning:</strong> Your browser doesn't support local storage. Your comics collection won't be persisted.
+            </span>
+        </div>
+        <div id="comicsSelectorContainer">
+            <select id="comicsSelector">
+                <% comic_data.keys.each do |id| %>
+                    <option value="<%= id %>"><%= comic_data[id][:name] %></option>
+                <% end %>
+            </select>
+            <div id="comicsSelectorWrapper">
+                <button id="chooseComicBtn">
+                    <span class="btnContent"><%= comic_data.values.first[:name].upcase %></span>
+                    <span id="arrowDown"></span>
+                </button>
+                <ul>
+                    <% comic_data.keys.each do |id| %>
+                        
+                            <li data-value="<%= id %>">
+                                <span class="tableCell">
+                                    <%= comic_data[id][:name].upcase %>
+                                </span>
+                            </li>
+                    <% end %>
+                </ul>
+            </div>
+            <button id="addComicBtn"><span class="btnContent">ADD THIS COMIC</span></button>
+            <button id="comicAddedBtn"><span class="btnContent">COMIC IN COLLECTION<span></button>
+        </div>
+        <div id="tipContainer" class="sectionContainer">
+            <span class="tableCell">
+                <strong>Tip:</strong> you can rearrange comics in your collection by dragging them by their title bar
+            </span>
+        </div>
+        <div id="comicsContainer">
+            <ul id="comicsList">
+            </ul>
+        </div>
+    </div>
+
+    <div id="footerContainer" class="sectionContainer">
+        <span class="tableCell">
+            <p>
+                &copy; 2014 Maksymilian Chwałek All Rights Reserved
+            </p>
+            <p>
+                Trash bin icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com/free-icon/trash_1570" title="Flaticon">www.flaticon.com</a>
+            </p>
+        </span>
+    </div>
+
+    <li id="placeholder">
+        <div class="comicContainer">
+            <div class="headerContainer">
+                <div class="header">
+                    <h2></h2>
+                </div>
+                <div class="deleteComicBtn">
+                    <span class="tableCell">
+                        <i class="flaticon-trash"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="comic">
+                <img src="./img/ajax-loader.gif">
+            </div>
+        </div>
+    </li>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./scripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <script type="text/javascript" src="./scripts/code.js"></script>
+  </body>
+</html>

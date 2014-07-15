@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="./flaticon/flaticon.css" rel="stylesheet">
+    <link href="./css/css-reset.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
+    <title>The webcomic shelf - all of your favourite webcomics in one place</title>
+  </head>
+  <body style="">
+    <div id="comicsSelectorContainer">
+        <select id="comicsSelector">
+            
+                <option value="axe_cop">Axe Cop</option>
+            
+                <option value="cyanide_and_happiness">Cyanide &amp; Happiness</option>
+            
+                <option value="daisy_owl">Daisy Owl</option>
+            
+                <option value="dilbert">Dilbert</option>
+            
+                <option value="dinosaur_comics">Dinosaur Comics</option>
+            
+                <option value="garfield">Garfield</option>
+            
+                <option value="grrl_power">Grrl Power</option>
+            
+                <option value="penny_arcade">Penny Arcade</option>
+            
+                <option value="saturday_morning_breakfast_cereal">Saturday Morning Breakfast Cereal</option>
+            
+                <option value="xkcd">xkcd</option>
+            
+        </select>
+        <button id="addComicBtn" style="display: none;">Add this comic</button>
+        <button id="comicAddedBtn" disabled="disabled" style="display: inline-block;">Comic in collection</button>
+    </div>
+    <div id="collectionHeader">
+        <h1>Your comic collection</h1>
+    </div>
+    <div id="comicsContainer">
+    <ul id="comicsList" class="ui-sortable">
+    <li id="xkcd">
+        <div class="headerContainer">
+            <div class="header">
+                <h2>xkcd wrsfdsfs fsdfdfskskflksfd fdfsdfdd ffsdsfdfdfdsdds dfsffsddsffdfd</h2>
+            </div>
+            <div class="deleteComicBtn">
+                <i class="flaticon-trash"></i>
+            </div>
+        </div>
+        <div class="comic">
+            <img src="http://imgs.xkcd.com/comics/when_you_assume.png" title="You know what happens when you assert--you make an ass out of the emergency response team." alt="When You Assume">
+        </div>
+    </li>
+    <li id="cyanide_and_happiness"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Cyanide &amp; Happiness</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img alt="Cyanide and Happiness, a daily webcomic" src="http://www.explosm.net/db/files/Comics/Dave/onetimeigotanxrayformypeepeeandtheyfoundthegreatvalleyinsideit.png" border="0">
+    </div>
+</div></li><li id="grrl_power"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Grrl Power</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img src="http://www.grrlpowercomic.com/comics/2014-03-06-GP0194.jpg" alt="Grrl Power #194 – Are kill-beams really ever that discriminate?" title="Grrl Power #194 – Are kill-beams really ever that discriminate?" class="ishadow40">
+    </div>
+</div></li><li id="axe_cop"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Axe Cop</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img src="http://mainsite.axecop.wpengine.com/wp-content/uploads/sites/2/2014/03/RORG_Page_17.jpg" alt="SKVASHH!!" title="SKVASHH!!">
+    </div>
+</div></li><li id="dinosaur_comics"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Dinosaur Comics</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img src="http://www.qwantz.com/comics/comic2-2598.png" class="comic" title="The story actually begins in 1770, with one Richard Trevithick, engineer, being visited by a stranger swaddled in rags to obscure his face and the precise dimensions of his body.  Plans for a steam-powered &quot;road locomotive&quot; are thrust into Richard's hands.  &quot;But... but these are far beyond current technology,&quot; Richard whispers, stunned.  A voice issues from the rags, manically, too screechy to be completely human, the syllables incomplete, malformed.  Years later, all Richard will ever claim to have understood are two words, repeated over and over again.  &quot;Puffing devil, puffing devil, puffing devil.&quot;">
+    </div>
+</div></li><li id="dilbert"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Dilbert</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img onload="Meebo('makeSharable',{ element:this, type:'image', title:'Dilbert.com Comic Strip by Scott Adams - 09-03-14 ', description:'The Official Dilbert Website featuring Scott Adams Dilbert strips, animations and more' })" src="/dyn/str_strip/000000000/00000000/0000000/200000/10000/2000/300/212334/212334.strip.sunday.gif" alt="The Official Dilbert Website featuring Scott Adams Dilbert strips, animations and more" border="0">
+    </div>
+</div></li><li id="daisy_owl">
+        <img src="./img/ajax-loader.gif">
+    </li><li id="garfield"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Garfield</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img class="img-responsive center-block" src="http://garfield.com/uploads/strips/2014-03-09.jpg" width="900">
+    </div>
+</div></li><li id="saturday_morning_breakfast_cereal"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Saturday Morning Breakfast Cereal</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img src="http://www.smbc-comics.com/comics/20140308.png">
+    </div>
+</div></li><li id="penny_arcade"><div class="comicContainer">
+    <div class="headerContainer">
+        <div class="header">
+            <h2>Penny Arcade</h2>
+        </div>
+        <div class="deleteComicBtn">
+            <i class="flaticon-trash"></i>
+        </div>
+        <div class="clearFix"></div>
+    </div>
+    <div class="comic">
+        <img src="http://art.penny-arcade.com/photos/i-CTnqNwT/0/1050x10000/i-CTnqNwT-1050x10000.jpg" alt="Consultant">
+    </div>
+</div></li></ul></div>
+
+    <li id="placeholder">
+        <img src="./img/ajax-loader.gif">
+    </li>
+
+    <div>Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com/free-icon/trash_1570" title="Flaticon">www.flaticon.com</a></div>
+
+    <script type="text/javascript" src="./js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="./js/jquery-ui-1.10.4.custom.min.js"></script>
+    <!--<script type="text/javascript" src="./js/code.js"></script>-->
+  
+</body></html>

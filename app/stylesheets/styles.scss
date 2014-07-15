@@ -1,0 +1,323 @@
+$colors: (alizarin: #e74c3c, alizarinHover: #ea6153, emerald: #2ecc71, peterRiver: #3498db, peterRiverHover: #4aa3df, silver: #bdc3c7, carrot: #e67e22, midnightBlue: #2c3e50);
+
+$siteBackgroundColor: map-get($colors, silver);
+$inactiveButtonTextColor: map-get($colors, silver);
+$errorColor: map-get($colors, alizarin);
+$deleteColor: map-get($colors, alizarin);
+$deleteHoverColor: map-get($colors, alizarinHover);
+$tipColor: map-get($colors, carrot);
+$comicSelectorColor: map-get($colors, peterRiver);
+$comicSelectorHoverColor: map-get($colors, peterRiverHover);
+$footerColor: map-get($colors, emerald);
+$linkColor: map-get($colors, midnightBlue);
+
+$siteWidth: 768px;
+$footerHeight: 3.5em;
+
+@mixin borderBoxSizing {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	@include borderBoxSizing;
+	text-align: center;
+	background-color: $siteBackgroundColor;
+	height: 100%;
+}
+
+body, button {
+	font: {
+		family: 'Lato', sans-serif;
+		weight: 300;
+	} 
+}
+
+html {
+	@include borderBoxSizing;
+	height: 100%;
+}
+
+button {
+	font-size: 1em;
+}
+
+#chooseComicBtn {
+	padding: {
+		left: 5px;
+		right: 1.5em;
+	}
+}
+
+#chooseComicBtn:hover, #addComicBtn:hover {
+	background-color: $comicSelectorHoverColor;
+}
+
+#chooseComicBtn:active, #addComicBtn:active {
+	background-color: $comicSelectorColor;
+}
+
+#arrowDown {
+	position: absolute;
+	right: 0.5em;
+	top: 0;
+	line-height: 40px;
+
+	&:before {
+		content: '\25bc';
+		font-size: 1em;
+	}
+}
+
+#comicsList {
+	display: inline-block;
+
+	li {
+		margin-bottom: 30px;
+		width: $siteWidth;
+		background-color: #ffffff;
+
+		.header {
+			cursor: move;
+			display: inline-block;
+			width: 100%;
+		}
+
+		.deleteComicBtn {
+			width: 2rem;
+			height: 2rem;
+			text-align: center;
+			background-color: $deleteColor;
+			color: #ffffff;
+			cursor: pointer;
+			display: table;
+			float: right;
+			position: absolute;
+			top: 0;
+			right: 0;
+			font-size: 1.8em;
+
+			&:hover {
+				background-color: $deleteHoverColor;
+			}
+
+			&:active {
+				background-color: $deleteColor;
+			}
+		}
+
+		.comic {
+			padding: {
+				top: 5px;
+				bottom: 5px;
+			}
+		}
+	}
+
+	img {
+		max-width: $siteWidth;
+		vertical-align: top;
+	}
+}
+
+#comicsContainer {
+	text-align: center;
+}
+
+#placeholder {
+	display: none;
+}
+
+#collectionHeader {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+.headerContainer {
+	border-bottom: 1px solid $siteBackgroundColor;
+	text-align: left;
+	position: relative;
+	height: 2em;
+	overflow: hidden;
+
+	padding: {
+		left: 0.5em;
+		right: 2.5em;
+	}
+}
+
+#comicsSelectorContainer {
+	@include borderBoxSizing;
+	background-color: $comicSelectorColor;
+	width: $siteWidth;
+	height: 100px;
+	text-align: left;
+	padding-left: 0.5em;
+	margin-bottom: 10px;
+
+	button {
+		background-color: $comicSelectorColor;
+		border: 1px solid #ffffff;
+		color: #ffffff;
+		height: 40px;
+		width: 200px;
+		display: inline-block;
+		vertical-align: top;
+		outline: 0;
+
+		&:active span.btnContent, &:focus span.btnContent {
+			position: relative;
+			top: 0;
+			left: 0;
+		}
+	}
+
+	#comicAddedBtn {
+		display: inline-block;
+		color: $inactiveButtonTextColor;
+	}
+}
+
+#comicsSelectorWrapper {
+	display: inline-block;
+	width: 200px;
+	position: relative;
+	top: 30px;
+
+	ul {
+		display: none;
+		height: 205px;
+		position: relative;
+		z-index: 10000;
+
+		overflow: {
+			x: hidden;
+			y: scroll;
+		}
+	}
+
+	li {
+		background-color: $comicSelectorColor;
+		color: #ffffff;
+		height: 40px;
+		width: 200px;
+		cursor: pointer;
+		overflow: hidden;
+		padding-left: 5px;
+		display: table;
+
+		border: {
+			left: 1px solid #ffffff;
+			right: 1px solid #ffffff;
+			bottom: 1px solid #ffffff;
+		}
+
+		&:hover {
+			background-color: $comicSelectorHoverColor;
+		}
+	}
+
+	button {
+		background-color: $comicSelectorColor;
+		border: 1px solid #ffffff;
+		color: #ffffff;
+		height: 40px;
+		width: 200px;
+		text-align: left;
+		cursor: pointer;
+	}
+}
+
+#comicsSelector {
+	display: none;
+}
+
+#contentContainer {
+	@include borderBoxSizing;
+	width: $siteWidth;
+	display: inline-block;
+	min-height: 100%;
+	margin-bottom: -$footerHeight;
+
+	&:after {
+		content: "";
+		display: block;
+		height: $footerHeight;
+	}
+}
+
+#addComicBtn {
+	cursor: pointer;
+}
+
+#addComicBtn, #comicAddedBtn {
+	padding: 0;
+	position: relative;
+	top: 30px;
+}
+
+.sectionContainer {
+	@include borderBoxSizing;
+	color: #ffffff;
+	font-weight: normal;
+	text-align: left;
+	padding-left: 0.5em;
+	display: table;
+	width: 100%;
+}
+
+#tipContainer {
+	background-color: $tipColor;
+	height: 2.5em;
+	margin-bottom: 30px;
+}
+
+#errorContainer {
+	background-color: $errorColor;
+	height: 2.5em;
+	margin-bottom: 10px;
+	display: none;
+}
+
+#footerContainer {
+	background-color: $footerColor;
+	height: $footerHeight;
+	text-align: center;
+	width: $siteWidth;
+	margin: auto;
+}
+
+#footerContent {
+	display: table;
+}
+
+.tableCell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+strong {
+	font-weight: bold;
+}
+
+a {
+	text-decoration: none;
+	color: $linkColor;
+}
+
+:focus {
+	outline: none;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
