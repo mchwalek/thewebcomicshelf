@@ -33,7 +33,7 @@
                 </button>
                 <ul>
                     <% comic_data.keys.each do |id| %>
-                        
+
                             <li data-value="<%= id %>">
                                 <span class="tableCell">
                                     <%= comic_data[id][:name].upcase %>
@@ -59,7 +59,7 @@
     <div id="footerContainer" class="sectionContainer">
         <span class="tableCell">
             <p>
-                &copy; 2014 Maksymilian Chwałek All Rights Reserved
+                &copy; 2014 - <%= Time.now.year %> Maksymilian Chwałek All Rights Reserved
             </p>
             <p>
                 Trash bin icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com/free-icon/trash_1570" title="Flaticon">www.flaticon.com</a>

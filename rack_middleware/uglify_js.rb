@@ -18,7 +18,6 @@ module RackMiddleware
         cached_checksum = cache[js_filepath]
 
         if js_file_checksum != cached_checksum
-          puts 'test'
           cache[js_filepath] = js_file_checksum
           cache_changed = true
 
