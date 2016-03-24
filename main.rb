@@ -25,8 +25,8 @@ def image_node(id)
     doc = Nokogiri::HTML(page_content)
   end
 
-  img_node = doc.xpath(comic[:img_selector])
-  img_node[0]['src'] = URI::join(comic[:page], img_node[0]['src'])
+  img_node = doc.xpath(comic[:img_selector])[0]
+  img_node['src'] = URI::join(comic[:page], img_node['src'])
 
   img_node.to_s
 end
